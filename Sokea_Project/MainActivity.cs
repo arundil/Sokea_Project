@@ -25,6 +25,14 @@ namespace Sokea_Project
             Button button = FindViewById<Button>(Resource.Id.MyButton);
 
             button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+
+            Button button2 = FindViewById<Button>(Resource.Id.nextscreen);
+            button2.Click += delegate {
+                var activity2 = new Intent(this, typeof(MainMenuActivity));
+                activity2.PutExtra("MyData", "Data from activity One");
+                StartActivity(activity2);
+            };
+
         }
     }
 }
