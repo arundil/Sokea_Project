@@ -9,6 +9,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.IO;
+using Android.Graphics;
+using Android.Provider;
+using Android.Content.PM;
 
 namespace Sokea_Project
 {
@@ -23,5 +27,7 @@ namespace Sokea_Project
             string.Format(text);
             // Create your application here
         }
+
     }
+
 }
