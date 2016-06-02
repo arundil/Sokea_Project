@@ -61,22 +61,22 @@ namespace Sokea_Project
 		{
 			
 			// aapt resource value: 0x7f050002
-			public const int gonext = 2131034114;
-			
-			// aapt resource value: 0x7f050003
-			public const int gonext2 = 2131034115;
-			
-			// aapt resource value: 0x7f050000
-			public const int linearLayout1 = 2131034112;
+			public const int MyButton = 2131034114;
 			
 			// aapt resource value: 0x7f050004
-			public const int linearLayout2 = 2131034116;
-			
-			// aapt resource value: 0x7f050005
-			public const int opencamera = 2131034117;
+			public const int editText1 = 2131034116;
 			
 			// aapt resource value: 0x7f050001
-			public const int textView1 = 2131034113;
+			public const int imageView1 = 2131034113;
+			
+			// aapt resource value: 0x7f050005
+			public const int makephonto = 2131034117;
+			
+			// aapt resource value: 0x7f050000
+			public const int myButton = 2131034112;
+			
+			// aapt resource value: 0x7f050003
+			public const int nextscreen = 2131034115;
 			
 			static Id()
 			{
@@ -92,10 +92,13 @@ namespace Sokea_Project
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Camera = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int MainScreen = 2130903041;
+			public const int Main = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int MainMenu = 2130903042;
 			
 			static Layout()
 			{
@@ -115,6 +118,9 @@ namespace Sokea_Project
 			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int openCamera = 2130968578;
 			
 			static String()
 			{

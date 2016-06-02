@@ -5,14 +5,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using System.Collections.Generic;
 
 namespace Sokea_Project
 {
-    [Activity(Label = "Splash_Screen", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Sokea_Project", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        static readonly List<string> randonlist = new List<string>();
+        int count = 1;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -23,21 +22,17 @@ namespace Sokea_Project
 
             // Get our button from the layout resource,
             // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.gonext);
-            button.Click += (object sender, EventArgs e) =>
-            {
-                Intent intent = new Intent(this, typeof(MainScreenActivity));
-                intent.PutStringArrayListExtra("Holamundo", randonlist);
-                StartActivity(intent);
+            Button button = FindViewById<Button>(Resource.Id.MyButton);
+
+            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+
+            Button button2 = FindViewById<Button>(Resource.Id.nextscreen);
+            button2.Click += delegate {
+                var activity2 = new Intent(this, typeof(CameraActivity));
+                //activity2.PutExtra("MyData", "Data from activity One");
+                StartActivity(activity2);
             };
 
-            Button button2 = FindViewById<Button>(Resource.Id.gonext2);
-            button2.Click += delegate
-            {
-                Intent intent = new Intent(this, typeof(MainScreenActivity));
-                StartActivity(intent);
-            };
-            //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
         }
     }
 }
