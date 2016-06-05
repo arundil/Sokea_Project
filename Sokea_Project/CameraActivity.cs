@@ -23,7 +23,7 @@ namespace Sokea_Project
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Cameraimage);
+            SetContentView(Resource.Layout.Camera);
             if (IsThereAnAppToTakePictures())
             {
                 CreateDirectoryForPictures();
