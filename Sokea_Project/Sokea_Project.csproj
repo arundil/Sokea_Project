@@ -49,6 +49,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tesseract">
+      <HintPath>..\..\..\Tesseract examples\Tesseract.Xamarin-master\Tesseract\bin\Debug\Tesseract.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
       <Private>True</Private>
@@ -69,14 +72,30 @@
   <ItemGroup>
     <Compile Include="BitmapHelpers.cs" />
     <Compile Include="CameraActivity.cs" />
+    <Compile Include="CameraOcrActivity.cs" />
     <Compile Include="GestureRecognizerView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="SplashActivity.cs" />
     <Compile Include="MainMenuActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tesseract\ITesseractApi.cs" />
+    <Compile Include="Tesseract\OcrEngineMode.cs" />
+    <Compile Include="Tesseract\PageIteratorLevel.cs" />
+    <Compile Include="Tesseract\PageSegmentationMode.cs" />
+    <Compile Include="Tesseract\ProgressEventArgs.cs" />
+    <Compile Include="Tesseract\Rectangle.cs" />
+    <Compile Include="Tesseract\Result.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
+    <AndroidAsset Include="Assets\tessdata\eng.cube.bigrams" />
+    <AndroidAsset Include="Assets\tessdata\eng.cube.fold" />
+    <AndroidAsset Include="Assets\tessdata\eng.cube.lm" />
+    <AndroidAsset Include="Assets\tessdata\eng.cube.nn" />
+    <AndroidAsset Include="Assets\tessdata\eng.cube.params" />
+    <AndroidAsset Include="Assets\tessdata\eng.cube.size" />
+    <AndroidAsset Include="Assets\tessdata\eng.cube.word-freq" />
+    <AndroidAsset Include="Assets\tessdata\eng.tesseract_cube.nn" />
+    <AndroidAsset Include="Assets\tessdata\eng.traineddata" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -89,6 +108,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\raw\gestures" />
+    <AndroidResource Include="Resources\layout\CameraOcr.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
@@ -125,7 +147,16 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Tesseract examples\Tesseract.Xamarin-master\Tesseract.Binding.Droid\Tesseract.Binding.Droid.csproj">
+      <Project>{f943cafb-0ff9-46a8-8698-95f0be6e3a86}</Project>
+      <Name>Tesseract.Binding.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Tesseract examples\Tesseract.Xamarin-master\Tesseract.Droid\Tesseract.Droid.csproj">
+      <Project>{75fe46b1-71eb-4525-89f9-278799b5c823}</Project>
+      <Name>Tesseract.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
     <Content Include="Resources\mipmap-mdpi\ic_launcher.png" />

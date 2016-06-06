@@ -55,7 +55,7 @@ namespace Sokea_Project
 
             if (prediction.Name.StartsWith("checkmark"))
             {
-                StartActivity(new Intent(this, typeof(CameraActivity)));
+                StartActivity(new Intent(this, typeof(CameraOcrActivity)));
             }
             else if (prediction.Name.StartsWith("erase", StringComparison.OrdinalIgnoreCase))
             {
